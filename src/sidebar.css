@@ -1,0 +1,115 @@
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 230px;
+  top: 0;
+  left: 0;
+  border-right: solid 1px gray;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: #1c1c1c;
+}
+
+.wrapper {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.h1 {
+  font-size: 1.7rem;
+  margin-left: 5px;
+  color: white;
+}
+
+.ul {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  align-items: left;
+}
+
+.li {
+  margin-left: -30px;
+}
+
+.note-button {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px;
+  color: white;
+  width: 180px;
+  font-size: 0.9rem;
+  padding-left: 10px;
+  height: 33px;
+  background: #5c5c5c;
+  text-align: left;
+  border: none;
+  transition: 0.3s;
+  outline: none;
+}
+
+.note-button:hover {
+  background: #4c4c4c;
+  transition: 0.3s;
+}
+
+.newnote {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  width: 75px;
+  color: white;
+  background: #4169e1;
+  transition: 0.3s;
+}
+
+.newnote:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.header {
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input {
+  width: 80%;
+  margin-left: 5px;
+  font-size: 0.9rem;
+  padding-left: 10px;
+  border-radius: 10px;
+  outline: none;
+  background: #3c3c3c;
+  color: white;
+  height: 25px;
+  border: 1px solid #000;
+  transition: 0.3s;
+}
+
+.input:hover {
+  background: #4c4c4c;
+  transition: 0.3s;
+}
+
+.selected {
+  background: #4169e1;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px;
+  color: white;
+  width: 180px;
+  font-size: 0.9rem;
+  padding-left: 10px;
+  height: 33px;
+  text-align: left;
+  border: none;
+  transition: 0.3s;
+  outline: none;
+}
