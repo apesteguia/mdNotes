@@ -24,6 +24,16 @@ const Sidebar: React.FC = () => {
 
   useEffect(() => {
     fetchNotes();
+    const handleKeyDown = async (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.key == "n") {
+        e.preventDefault();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const handleFetchNotes = async () => {
@@ -64,8 +74,6 @@ const Sidebar: React.FC = () => {
         />
         <div className="header">
           <h1 className="h1"> Notes</h1>
-          {/* Pasa la función de callback al componente NewNote */}
-
           <NewNote onNoteCreated={handleFetchNotes} />
         </div>
         <input

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./newnote.css";
 import { toast } from "react-toastify";
 import { invoke } from "@tauri-apps/api";
@@ -13,6 +13,29 @@ interface NewNoteProps {
 const NewNote: React.FC<NewNoteProps> = ({ onNoteCreated }) => {
   const [show, setShow] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
+
+  useEffect(() => {
+    const handleKeyDown = async (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.key == "n") {
+        e.preventDefault();
+        setShow(!show);
+      }
+    };
+
+    const handleKeyEsc = async (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setShow(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", handleKeyEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyEsc);
+    };
+  }, [show]);
 
   const handleShow = () => {
     setInput("");

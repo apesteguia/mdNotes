@@ -15,15 +15,26 @@ type NoteProps = {
   path: string;
 };
 
-const remarkPlugins = [remarkGfm]; // Aquí defines los plugins una vez para reutilizarlos
+const remarkPlugins = [remarkGfm];
 
 export function Note({ text, path }: NoteProps) {
   const [visual, setVisual] = useState<boolean>(true);
   const [textareaText, setTextareaText] = useState<string>(text);
 
   useEffect(() => {
+    const handleKeyDown = async (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.key === "h") {
+        e.preventDefault();
+        setVisual(!visual);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
     setTextareaText(text);
-  }, [text]);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [text, visual]);
 
   const handleVisual = () => {
     setVisual(!visual);
@@ -47,7 +58,7 @@ export function Note({ text, path }: NoteProps) {
         <Markdown
           className="textarea"
           children={textareaText}
-          remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
+          remarkPlugins={[[remarkGfm]]}
           components={{
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || "");
