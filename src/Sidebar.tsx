@@ -40,6 +40,12 @@ const Sidebar: React.FC = () => {
     await fetchNotes();
   };
 
+  const handleDelete = async (path: string) => {
+    console.log(selectedNotePath);
+    await invoke("delete", { path: path });
+    await fetchNotes();
+  };
+
   const handleNoteClick = async (path: string) => {
     setSelectedNotePath(path);
     const content: string = await invoke("get_note_string", { path });
@@ -82,13 +88,23 @@ const Sidebar: React.FC = () => {
           className="input"
           onChange={handleInputChange}
         />
-        <ul className="ul mt-5 flex flex-col gap-2">
+        <ul className="ul">
           {notes.map((note) => (
-            <li key={note.path} onClick={() => handleNoteClick(note.path)}>
+            <li
+              key={note.path}
+              className="l"
+              onClick={() => handleNoteClick(note.path)}
+            >
               <button
                 className={`li ${note.path === selectedNotePath ? "selected" : "note-button"}`}
               >
                 {note.path.split("/").pop()}
+              </button>
+              <button
+                className={`li ${note.path === selectedNotePath ? "delete" : "hidden"}`}
+                onClick={() => handleDelete(note.path)}
+              >
+                X
               </button>
             </li>
           ))}

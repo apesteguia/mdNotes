@@ -11,6 +11,29 @@
   background: #1c1c1c;
 }
 
+.l {
+  color: white;
+}
+
+.delete {
+  cursor: pointer;
+  left: 200px;
+  margin-top: 7px;
+  border-radius: 999px;
+  width: 23px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.delete:hover {
+  background: red;
+  transition: 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
 .wrapper {
   margin-left: 10px;
   margin-top: 10px;
@@ -25,9 +48,11 @@
 .ul {
   margin-top: 10px;
   display: flex;
+  overflow-y: auto;
   flex-direction: column;
   gap: 6px;
   list-style: none;
+  height: 80%;
   align-items: left;
 }
 
