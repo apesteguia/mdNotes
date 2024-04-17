@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 10, 10, 0.65);
+  background: rgba(10, 10, 10, 0.35);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -12,47 +12,74 @@
 }
 
 .dialog {
-  width: 430px;
-  height: 110px;
-  background: #1c1c1c;
-  color: white;
+  width: 400px;
+  height: 150px;
+  background: white;
   margin-top: 200px;
-  border-radius: 20px;
+  border-radius: 9px;
   display: flex;
   flex-direction: column;
   z-index: 999;
 }
 
+.dialogb {
+  margin-left: 270px;
+  display: flex;
+  gap: 5px;
+}
+
+.dialogh {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.dialogp {
+  opacity: 0.6;
+  margin-top: -10px;
+  margin-left: 20px;
+  font-size: 0.8rem;
+}
+
 .h2 {
   margin-left: 20px;
+  font-size: 1.3rem;
 }
 
 .inputnewnote {
-  background: #3c3c3c;
-  width: 75%;
+  width: 85%;
+  border: 1px solid lightgray;
   outline: none;
-  border: none;
-  border-radius: 10px;
-  color: white;
+  border-radius: 7px;
   padding-left: 10px;
-  height: 30px;
+  height: 25px;
   font-size: 0.8rem;
   margin-left: 20px;
 }
 
 .inp {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
 .newnote2 {
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
   width: 50px;
   font-size: 0.75rem;
-  color: white;
-  background: #4169e1;
+  background: white;
+  border: 1px solid black;
   transition: 0.3s;
+}
+
+.cancel {
+  border: none;
+  color: white;
+  padding: 5px;
+  width: 50px;
+  background: black;
+  border-radius: 5px;
 }

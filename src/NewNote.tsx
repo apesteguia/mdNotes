@@ -83,19 +83,30 @@ const NewNote: React.FC<NewNoteProps> = ({ onNoteCreated }) => {
       ) : (
         <div className="cub" onClick={handleShow}>
           <div className="dialog" onClick={stopPropagation}>
-            <h2 className="h2">Create a new note</h2>
+            <div className="dialogh">
+              <h2 className="h2">Create a new note</h2>
+              <p className="dialogp">
+                Enter a name for your note and get started
+              </p>
+            </div>
             <div className="inp">
               <input
                 className="inputnewnote"
+                autoFocus
                 type="text"
                 placeholder="Type the name"
                 onChange={handleInputChange}
                 value={input}
                 maxLength={30}
               />
-              <button onClick={handleCreate} className="newnote2">
-                Create
-              </button>
+              <div className="dialogb">
+                <button className="cancel" onClick={handleShow}>
+                  Cancel
+                </button>
+                <button onClick={handleCreate} className="newnote2">
+                  Create
+                </button>
+              </div>
             </div>
           </div>
         </div>
