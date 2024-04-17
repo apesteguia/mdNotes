@@ -7,8 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { invoke } from "@tauri-apps/api";
 //import remarkGfm from "remark-gfm";
 import remarkGfm from "remark-gfm";
-
 import Markdown from "react-markdown";
+import Bar from "./Bar.tsx";
 
 type NoteProps = {
   text: string;
@@ -45,12 +45,13 @@ export function Note({ text, path }: NoteProps) {
   ) => {
     const newText = e.target.value;
     setTextareaText(newText);
-    await invoke("save", { content: newText, path: path });
+    //await invoke("save", { content: newText, path: path });
     console.log(newText);
   };
 
   return (
     <div className="note">
+      <Bar name={path} txt={textareaText} />
       <button className="visual" onClick={handleVisual}>
         Visual: {visual ? "On" : "Off"}
       </button>

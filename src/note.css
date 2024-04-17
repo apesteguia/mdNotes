@@ -10,7 +10,7 @@
 
 .visual {
   position: fixed;
-  top: 10px;
+  top: 60px;
   right: 18px;
   background: #1c1c1c;
   color: white;
@@ -41,12 +41,12 @@ code {
 
 .textarea {
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
   outline: none;
   border: none;
   font-size: 1rem;
   resize: none;
   overflow-y: auto;
-  height: 95%;
+  height: 93%;
   width: 96%;
 }
