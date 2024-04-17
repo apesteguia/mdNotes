@@ -1,33 +1,36 @@
 .sidebar {
   position: fixed;
   height: 100%;
-  width: 230px;
+  width: 250px;
   top: 0;
   left: 0;
-  border-right: solid 1px gray;
+  border-right: solid 1px #fafbfb;
   display: flex;
   flex-direction: column;
   align-items: left;
-  background: #1c1c1c;
-}
-
-.l {
-  color: white;
+  background: #fafafa;
 }
 
 .delete {
   cursor: pointer;
-  left: 200px;
-  margin-top: 7px;
   border-radius: 999px;
+  font-size: 13px;
+  margin-top: 2px;
+  align-self: left;
+  background: transparent;
+  border: none;
   width: 23px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.2s;
+}
+
+.l {
+  display: flex;
 }
 
 .delete:hover {
-  background: red;
-  transition: 0.3s;
+  color: red;
+  transition: 0.1s;
 }
 
 .hidden {
@@ -42,7 +45,6 @@
 .h1 {
   font-size: 1.7rem;
   margin-left: 5px;
-  color: white;
 }
 
 .ul {
@@ -52,7 +54,7 @@
   flex-direction: column;
   gap: 6px;
   list-style: none;
-  height: 80%;
+  height: 93%;
   align-items: left;
 }
 
@@ -62,14 +64,17 @@
 
 .note-button {
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 7px;
   padding: 4px;
-  color: white;
-  width: 180px;
+  width: 210px;
   font-size: 0.9rem;
   padding-left: 10px;
-  height: 33px;
-  background: #5c5c5c;
+  height: 30px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba(0, 0, 0, 0.4);
   text-align: left;
   border: none;
   transition: 0.3s;
@@ -77,18 +82,22 @@
 }
 
 .note-button:hover {
-  background: #4c4c4c;
+  background: #f3f4f6;
+  color: rgba(0, 0, 0, 0.9);
   transition: 0.3s;
 }
 
 .newnote {
   outline: none;
+  margin-left: 10px;
+  margin-top: 20px;
   border: none;
   border-radius: 10px;
+  font-size: 1rem;
   padding: 5px;
-  width: 75px;
-  color: white;
-  background: #4169e1;
+  width: 210px;
+  height: 30px;
+  background: #f3f4f9;
   transition: 0.3s;
 }
 
@@ -105,35 +114,36 @@
 }
 
 .input {
-  width: 80%;
-  margin-left: 5px;
+  width: 210px;
+  margin-left: 10px;
+  margin-top: 10px;
   font-size: 0.9rem;
   padding-left: 10px;
   border-radius: 10px;
   outline: none;
-  background: #3c3c3c;
-  color: white;
   height: 25px;
-  border: 1px solid #000;
+  border: 1px solid lightgray;
   transition: 0.3s;
 }
 
 .input:hover {
-  background: #4c4c4c;
+  background: #f3f4f9;
   transition: 0.3s;
 }
 
 .selected {
-  background: #4169e1;
+  background: #f3f4f9;
   cursor: pointer;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: black;
+  border-radius: 7px;
   padding: 4px;
-  color: white;
-  width: 180px;
+  width: 210px;
   font-size: 0.9rem;
   padding-left: 10px;
-  height: 33px;
-  text-align: left;
+  height: 30px;
   border: none;
   transition: 0.3s;
   outline: none;

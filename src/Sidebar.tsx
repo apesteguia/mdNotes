@@ -4,6 +4,8 @@ import { ToastContainer } from "react-toastify";
 import Note from "./note.tsx";
 import NewNote from "./NewNote.tsx";
 import "./sidebar.css";
+import { CiFileOn } from "react-icons/ci";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 interface Note {
   path: string;
@@ -79,7 +81,6 @@ const Sidebar: React.FC = () => {
           theme="dark"
         />
         <div className="header">
-          <h1 className="h1"> Notes</h1>
           <NewNote onNoteCreated={handleFetchNotes} />
         </div>
         <input
@@ -98,13 +99,14 @@ const Sidebar: React.FC = () => {
               <button
                 className={`li ${note.path === selectedNotePath ? "selected" : "note-button"}`}
               >
+                <CiFileOn />
                 {note.path.split("/").pop()}
               </button>
               <button
                 className={`li ${note.path === selectedNotePath ? "delete" : "hidden"}`}
                 onClick={() => handleDelete(note.path)}
               >
-                X
+                <RiDeleteBinLine className="delete" />
               </button>
             </li>
           ))}
