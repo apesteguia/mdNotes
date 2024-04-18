@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
   const [originalNotes, setOriginalNotes] = useState<Note[]>([]);
   const [notes, setNotes] = useState<Note[]>([]);
   const [selectedNotePath, setSelectedNotePath] = useState<string>("");
-  const [query, setQuery] = useState<string>("");
+  const [_, setQuery] = useState<string>("");
   const [selectedNoteContent, setSelectedNoteContent] = useState<string>("");
 
   const fetchNotes = async () => {

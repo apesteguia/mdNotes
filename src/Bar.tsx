@@ -1,7 +1,6 @@
 import "./bar.css";
 import { CiSaveDown2 } from "react-icons/ci";
 import { SlOptionsVertical } from "react-icons/sl";
-import React, { useState, useEffect } from "react";
 import { invoke } from "@tauri-apps/api";
 import { toast } from "react-toastify";
 
